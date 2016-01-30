@@ -51,7 +51,33 @@ $ echo $?
 
 ### バージョン表示
 
+```shellsession
+$ command_name --version # もしくは `-v'
+v0.1.0
+```
+
+- **[MUST]** バージョンが標準出力されること。
+- **[MUST]** バージョンが標準出力されたのち、正常終了すること。
+- **[OPTIONAL]** バージョン以外の情報も含めてもよい。
+    - e.g. ソフトウェア名、ライセンス、作者への連絡先...
+- **[OPTIONAL]** *ソフトウェア内の処理について、これを冗長的に表示するよう指示するオプション*（`--verbose`）等をソフトウェアが受け付けるようにする際は、これのショートオプションを `-v`としてもよい。ただし、[GNU標準コマンドラインインターフェイス](https://www.gnu.org/prep/standards/html_node/Command_002dLine-Interfaces.html)に従い`--version`オプションは必ず受け付けること。
+
 ### ヘルプ表示
+
+```shellsession
+$ command_name --help # もしくは `-h'
+Usage: command_name [OPTION]...
+    -l, --list        print all quotes list and exit
+    :
+    :
+```
+
+- **[MUST]** ヘルプが標準出力されること。
+- **[MUST]** ヘルプが標準出力されたのち、正常終了すること。
+- **[MUST]** ソフトウェアが取りうる全ての引数およびオプションの表示ないし解説をする必要はない。しかし、表示しない場合は、`README.md`や`man`への誘導をヘルプメッセージ内で行うこと。
+- **[OPTIONAL]** ヘルプメッセージは、引数およびオプション以外の情報も含めてもよい。
+    - e.g. ソフトウェア名、ライセンス、作者への連絡先...
+- **[OPTIONAL]** *処理結果について、これの先頭行のみを表示するよう指示するオプション*（`--header`）等をソフトウェアが受け付けるようにする際は、これのショートオプションを `-h`としてもよい。ただし、[GNU標準コマンドラインインターフェイス](https://www.gnu.org/prep/standards/html_node/Command_002dLine-Interfaces.html)に従い`--help`オプションは必ず受け付けること。
 
 ### 全引用表示
 
