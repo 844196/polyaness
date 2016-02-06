@@ -21,6 +21,22 @@
 - **[MUST]** 辞書ファイル全体の書式は[LTSV](http://ltsv.org/)とする。
     - 各列の並びは問わない。
 
+- **[MUST]** 辞書ファイルの先頭行には、ファイル識別子`filetype:polyaness_dict`がなければならない。
+
+  ```text
+  filetype:polyaness_dict
+  speaker:れんげ<TAB>quote:にゃんぱす〜
+   :
+   :
+   :
+  ```
+
+    - **[SHOULD]** 先頭行には`filetype`以外の任意のメタ情報を付与してもよいが、特段の事情がない限り`author`と`description`は必須とする。
+
+      ```text
+      filetype:polyaness_dict<TAB>author:844196<TAB>description:Great Dictionary
+      ```
+
 - **[MUST]** 辞書ファイル内の各レコードは、以下の列を必ず備えるものとする:
     - `speaker`: 発言者
     - `quote`: 発言内容
